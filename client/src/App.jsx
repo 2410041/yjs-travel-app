@@ -26,7 +26,7 @@ function App() {
         // --- 【追加】自分の状態（名前と色）を他のユーザーに知らせる ---
         provider.awareness.setLocalStateField('user', {
             name: currentName,
-            color: '#' + Math.floor(Math.random() * 16777215).toString(16) // ランダムな色を割り当て
+            color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')
         });
 
         // --- 【追加】誰かが入室・退室・変更した時に実行される ---
