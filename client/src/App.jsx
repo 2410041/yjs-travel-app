@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const ydoc = new Y.Doc();
-    const provider = new WebsocketProvider('ws://localhost:1234', 'travel-room', ydoc);
+    const provider = new WebsocketProvider('wss://yjs-travel-app.onrender.com', 'travel-room', ydoc);
 
     provider.on('status', event => {
       setStatus(event.status === 'connected' ? '🟢 接続済み' : '🔴 切断');
