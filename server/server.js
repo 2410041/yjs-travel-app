@@ -19,7 +19,9 @@ wss.on('connection', (conn, req) => {
     setupWSConnection(conn, req, { gc: true });
 });
 
-// ポート1234番でサーバーを起動
-server.listen(1234, () => {
-    console.log('🚀 WebSocketサーバー起動: ws://localhost:1234');
+// Renderが指定するポート番号、またはローカル用の1234番を使用する
+const PORT = process.env.PORT || 1234;
+
+server.listen(PORT, () => {
+    console.log(`🚀 WebSocketサーバー起動: ポート ${PORT}`);
 });
